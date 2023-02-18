@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image Build and Publish to DockerHub
 
 on:
   push:
@@ -14,5 +14,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Docker Login
+      env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag noi-linux:$(date +%s)
+
+    - name: Publish the Docker image
+      run: docker push ${{secrets.DOCKER_USER}}/noi-linux
+    
