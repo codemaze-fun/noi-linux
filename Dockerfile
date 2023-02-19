@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+ENV TZ=Asia/Chongqing
+
 RUN apt-get update -y
 RUN apt-get install -y gcc g++ fpc
 RUN apt-get install -y python2.7 python2.7-dev python3.8 python3.8-dev
