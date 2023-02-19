@@ -12,3 +12,10 @@ RUN apt-get install -y gdb ddd
 RUN apt-get install -y lazarus geany codeblocks
 RUN apt-get install -y nano vim emacs gedit joe
 RUN apt-get install -y firefox xterm mc
+
+# install vscode
+RUN apt-get install -y wget
+RUN wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+RUN dpkg -i code_*amd64.deb
+RUN rm -f code_*amd64.deb
+
