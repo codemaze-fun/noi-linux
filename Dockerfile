@@ -19,3 +19,17 @@ RUN wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=s
 RUN apt-get install -y -f ./vscode_amd64.deb
 RUN rm -f vscode_amd64.deb
 
+# install vnc-server
+RUN apt-get install -y xfce4 xfce4-goodies
+RUN apt-get install -y tightvncserver
+
+# launch tighvnc server
+# CMD tightvncserver -passwd defaultpassword
+
+# launch sshd
+
+# sshd and vnc
+EXPOSE 22
+EXPOSE 5901
+
+
