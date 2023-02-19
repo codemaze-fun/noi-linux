@@ -1,6 +1,9 @@
 FROM ubuntu:20.04
 
-ENV TZ=Asia/Chongqing
+# only for building, not persisted into the final image
+ARG DEBIAN_FRONTEND="noninteractive"
+
+ENV TZ="Asia/Chongqing"
 
 RUN apt-get update -y
 RUN apt-get install -y gcc g++ fpc
