@@ -19,11 +19,11 @@ jobs:
       uses: docker/metadata-action@v4.3.0
       with:
         images: codemaze/noi-linux
-      tags: |
-        type=semver,pattern={{version}}
-        type=semver,pattern={{major}}.{{minor}}
-        type=sha
-        type=raw,value=latest
+        tags: |
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha
+          type=raw,value=latest
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2.1.0
