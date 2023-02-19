@@ -15,7 +15,7 @@ RUN apt-get install -y firefox xterm mc
 
 # install vscode
 RUN apt-get install -y wget
-RUN wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-RUN dpkg -i code_*amd64.deb
-RUN rm -f code_*amd64.deb
+RUN wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+RUN dpkg -i vscode_amd64.deb
+RUN rm -f code_amd64.deb
 
