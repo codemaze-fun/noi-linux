@@ -2,34 +2,23 @@
 
 ## 简介
 
-容器化的NOI/CSP-J/CSP-S的竞赛环境  NOI Linux 2.0版（Ubuntu-NOI 2.0版）
+NOI/CSP-J/CSP-S的竞赛环境  NOI Linux 2.0版（Ubuntu-NOI 2.0版）
 
-Helm Chart在上述容器的基础上，提供了Kubernetes下的标准化部署方式。
+本repo提供一下方式准备竞赛环境：
 
-![image](https://user-images.githubusercontent.com/8893623/219260892-21e6c875-6e30-41d9-869f-6ac7c5302114.png)
+1. container
 
-## 功能
+适合有Docker环境，想快速上手实验的同学们。
 
-该容器与官方提供的ISO是以不同形式制作，最大限度保证了安装软件的一致性。
+2. 快速安装脚本
 
-启动该容器后，容器默认提供两个访问方式：
+适合已经有现成的Linux环境，想复用现有环境的同学们。
 
-- sshd on TCP port 22
+3. Helm chart
 
-- vnc on TCP port 5901
+适合想把这个环境部署到Kubernetes标准基础架构里的同学们。
 
-## 使用
 
-```shell
-$ docker run codemaze/noi-linux
-```
+## 更多信息
 
-## Helm Chart
-
-```shell
-$ helm install noi-linux codemaze/noi-linux
-```
-
-## 原文链接
-
-https://www.noi.cn/gynoi/jsgz/2021-07-16/732450.shtml
+关于每种环境和安装方式的具体内容，请查看目录下的README.md 
