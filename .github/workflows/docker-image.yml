@@ -3,6 +3,8 @@ name: Docker Image Build and Publish to DockerHub
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - container/**
 
 jobs:
 

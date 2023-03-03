@@ -25,12 +25,11 @@ RUN wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=s
 RUN apt-get install -y -f ./vscode_amd64.deb
 RUN rm -f vscode_amd64.deb
 
-# install vnc-server
+# install vnc-server or xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
-RUN apt-get install -y tightvncserver
-
-# launch tighvnc server
-# CMD tightvncserver -passwd defaultpassword
+# RUN apt-get install -y tightvncserver
+RUN apt-get install -y xrdp
+RUN adduser xrdp ssl-cert
 
 # install openssh-server
 RUN apt-get install -y openssh-server
@@ -39,10 +38,14 @@ RUN echo 'root:codemaze' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
-# sshd and vnc
+ADD launch.sh /launch.sh
+
+# sshd and rdp
 EXPOSE 22
-EXPOSE 5901
+EXPOSE 3389
 
 # launch sshd
-CMD ["/usr/sbin/sshd", "-D"]
+#CMD ["/usr/sbin/sshd", "-D"]
+#CMD ["xrdp"]
+CMD ["bash", "/launch.sh"]
 
