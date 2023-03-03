@@ -1,0 +1,24 @@
+name: Docker Image Build and Publish to DockerHub
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v3.3.0
+
+    - name: run installer
+      run: |
+        sudo bash -x installer/install.sh
+
+    - name: test the env
+      run: |
+        sudo bash -x installer/check.sh 
