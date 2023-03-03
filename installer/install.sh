@@ -24,3 +24,6 @@ rm -f vscode_amd64.deb
 apt-get install -y xfce4 xfce4-goodies
 apt-get install -y tightvncserver
 
+# install for testing
+apt-get install -y apt-show-versions
+
