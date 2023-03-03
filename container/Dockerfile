@@ -33,9 +33,9 @@ RUN apt-get install -y tightvncserver
 # CMD tightvncserver -passwd defaultpassword
 
 # install openssh-server
-RUN apt-get update && apt-get install -y openssh-server
+RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-RUN echo 'codemaze:C0deM@ze' | chpasswd
+RUN echo 'root:codemaze' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
