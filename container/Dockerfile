@@ -13,6 +13,12 @@ RUN apt-get install -y lazarus geany codeblocks
 RUN apt-get install -y nano vim emacs gedit joe
 RUN apt-get install -y firefox xterm mc
 
+# install sublime-text
+RUN wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+RUN echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+RUN sudo apt-get update -y
+RUN sudo apt-get install -y sublime-text
+
 # install vscode
 RUN apt-get install -y wget
 RUN wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"

@@ -3,47 +3,22 @@
 # check against the env with noi.cn
 # https://noi.cn/gynoi/jsgz/2021-07-16/732450.shtml
 
+# check kernel version
 uname -r
 
-gcc --version
+# check versions for dev toolchains
+apt-show-versions gcc g++ fpc python2 python3 gdb ddd
 
-g++ --version
-
-fpc --version
-
-python2 --version
-
-python3 --version
-
-python --version
-
-gdb --version
-
-ddd --version
-
-# code::blocks
-# lazarus
-# geany
+# check versions for IDE and editors
+apt-show-versions lazarus geany codeblocks
+apt-show-versions vim gedit nano emacs joe sublime-text
 
 # vscode
+code --version
 
-emacs --version
+# check versions for other utilities
+apt-show-versions firefox xterm mc
 
-vim --version
+# sublime --version
 
-gedit --version
-
-joe --version
-
-nano --version
-
-sublime --version
-
-firefox --version
-
-mc --version
-
-xterm --version
-
-arbiter-local --version
-
+# arbiter-local --version
