@@ -32,6 +32,9 @@ $ docker run codemaze/noi-linux
 $ helm install noi-linux codemaze/noi-linux
 ```
 
-## 原文链接
+## 参考链接
 
 https://www.noi.cn/gynoi/jsgz/2021-07-16/732450.shtml
+
+https://oi-wiki.org/tools/wsl/
+
