@@ -18,7 +18,6 @@ NOI/CSP-J/CSP-S的竞赛环境  NOI Linux 2.0版（Ubuntu-NOI 2.0版）
 
 适合想把这个环境部署到Kubernetes标准基础架构里的同学们。
 
-Helm Chart在上述容器的基础上，提供了Kubernetes下的标准化部署方式。
 
 ## 更多信息
 
