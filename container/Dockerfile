@@ -26,6 +26,7 @@ RUN apt-get install -y -f ./vscode_amd64.deb
 RUN rm -f vscode_amd64.deb
 
 # add arbiter
+RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
 ADD arbiter.tar.gz /tmp/arbiter.tar.gz
 RUN tar xzvf -C /usr/local /tmp/arbiter.tar.gz
 
