@@ -35,9 +35,11 @@ RUN adduser xrdp ssl-cert
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:codemaze' | chpasswd
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN sed -i 's/.*Banner.*/Banner /etc/ssh/banner.txt/' /etc/ssh/sshd_config
 
+ADD banner.txt /etc/ssh/banner.txt
 ADD launch.sh /launch.sh
 
 # sshd and rdp

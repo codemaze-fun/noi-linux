@@ -2,5 +2,5 @@
 
 xrdp
 
-sshd -D
+/sbin/sshd -D
 
