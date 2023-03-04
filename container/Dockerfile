@@ -25,6 +25,10 @@ RUN wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=s
 RUN apt-get install -y -f ./vscode_amd64.deb
 RUN rm -f vscode_amd64.deb
 
+# add arbiter
+ADD arbiter.tar.gz /tmp/arbiter.tar.gz
+RUN tar xzvf -C /usr/local /tmp/arbiter.tar.gz
+
 # install vnc-server or xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
 # RUN apt-get install -y tightvncserver
