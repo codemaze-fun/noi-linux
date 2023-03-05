@@ -3,7 +3,7 @@
 echo "hello"
 
 # test script
-FILE_TO_CHECK="/test.sh"
+FILE_TO_CHECK="/check.sh"
 
 test -f "$FILE_TO_CHECK"
 test -x "$FILE_TO_CHECK"

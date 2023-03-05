@@ -51,8 +51,8 @@ ADD --chown=root:root launch.sh /
 RUN chmod +x /launch.sh
 
 # add test script
-ADD --chown=root:root test.sh /
-RUN chmod +x /test.sh
+ADD --chown=root:root check.sh /
+RUN chmod +x /check.sh
 
 # sshd and rdp
 EXPOSE 22
