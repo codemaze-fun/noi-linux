@@ -24,4 +24,4 @@ jobs:
 
     - name: Test the container
       run: |
-        docker run -it codemaze/noi-linux /test-container.sh
+        docker run -it codemaze/noi-linux /test.sh
