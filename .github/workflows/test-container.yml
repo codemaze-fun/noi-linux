@@ -27,7 +27,7 @@ jobs:
       with:
         images: codemaze/noi-linux
         tags: |
-          type=sha,format=long
+          type=sha,format=long,prefix=
 
     - name: Build the Docker image without push
       uses: docker/build-push-action@v4
