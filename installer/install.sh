@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export DEBIAN_FRONTEND="noninteractive"
 export TZ="Asia/Chongqing"
