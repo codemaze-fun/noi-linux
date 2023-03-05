@@ -17,10 +17,26 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v3.3.0
 
-    - name: Build the container
-      run: |
-        cd container
-        docker build -t codemaze/noi-linux:$GITHUB_SHA .
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@v4.3.0
+      with:
+        images: codemaze/noi-linux
+        tags: |
+          type=sha,format=long
+
+    - name: Build the Docker image without push
+      uses: docker/build-push-action@v4
+      with:
+        context: container/.
+        platforms: linux/amd64
+        push: false
+        tags: ${{ steps.meta.outputs.tags }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
     - name: Test the container
       run: |
