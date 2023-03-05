@@ -25,6 +25,10 @@ RUN wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=s
 RUN apt-get install -y -f ./vscode_amd64.deb
 RUN rm -f vscode_amd64.deb
 
+# add arbiter
+RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
+ADD arbiter.tar.gz /usr/local/
+
 # install vnc-server or xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
 # RUN apt-get install -y tightvncserver
@@ -39,8 +43,8 @@ RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
-ADD banner.txt /etc/ssh/banner.txt
-ADD launch.sh /launch.sh
+ADD banner.txt /etc/ssh/
+ADD launch.sh /
 
 # sshd and rdp
 EXPOSE 22

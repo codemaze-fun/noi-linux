@@ -26,6 +26,9 @@ wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stabl
 apt-get install -y -f ./vscode_amd64.deb
 rm -f vscode_amd64.deb
 
+# install arbiter
+apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
+
 # install vnc-server
 apt-get install -y xfce4 xfce4-goodies
 apt-get install -y tightvncserver
