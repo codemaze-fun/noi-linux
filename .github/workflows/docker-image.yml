@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - container/**
+      - .github/workflows/docker-image.yml
 
 jobs:
 
