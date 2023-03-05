@@ -22,7 +22,7 @@ test -f "$FILE_TO_CHECK"
 test -x "$FILE_TO_CHECK"
 
 # binaries existance check
-BINS_TO_CHECK=("vim" "emacs" "firefox")
+BINS_TO_CHECK=("python2" "python3" "gdb" "ddd" "vim" "nano" "emacs" "firefox")
 for idx in "${!BINS_TO_CHECK[@]}"
 do
     #echo ${BINS_TO_CHECK[$idx]}
