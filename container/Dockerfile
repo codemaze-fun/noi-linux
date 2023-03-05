@@ -27,7 +27,7 @@ RUN rm -f vscode_amd64.deb
 
 # add arbiter
 RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
-ADD arbiter.tar.gz /tmp/arbiter.tar.gz
+ADD arbiter.tar.gz /tmp/
 RUN tar -C /usr/local -xzvf /tmp/arbiter.tar.gz
 
 # install vnc-server or xrdp
@@ -44,8 +44,8 @@ RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
-ADD banner.txt /etc/ssh/banner.txt
-ADD launch.sh /launch.sh
+ADD banner.txt /etc/ssh/
+ADD launch.sh /
 
 # sshd and rdp
 EXPOSE 22
