@@ -27,6 +27,9 @@ RUN rm -f vscode_amd64.deb
 
 # add arbiter
 RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
+RUN apt-get install -y "language-pack-zh-hans*"
+RUN apt-get install -y locales
+RUN apt-get install -y fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
 ADD arbiter.tar.gz /usr/local/
 
 # install vnc-server or xrdp
