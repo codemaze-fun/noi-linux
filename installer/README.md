@@ -5,7 +5,7 @@
 ## 使用
 
 ```shell
-$ curl -fsS 'https://main/install.sh' | sudo bash
+$ curl -fsS 'https://raw.githubusercontent.com/codemaze-fun/noi-linux/main/installer/install.sh' | sudo bash
 ```
 
 ## 支持
