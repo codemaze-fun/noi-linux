@@ -48,11 +48,11 @@ RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
 ADD --chown=root:root banner.txt /etc/ssh/
 ADD --chown=root:root launch.sh /
-RUN chmod +x /root/launch.sh
+RUN chmod +x /launch.sh
 
 # add test script
-ADD --chown=root:root test-container.sh /
-RUN chmod +x /test-container.sh
+ADD --chown=root:root test.sh /
+RUN chmod +x /test.sh
 
 # sshd and rdp
 EXPOSE 22
