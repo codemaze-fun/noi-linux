@@ -27,9 +27,7 @@ RUN rm -f vscode_amd64.deb
 
 # add arbiter
 RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
-ADD arbiter.tar.gz /tmp/
-RUN tar -C /usr/local -xzvf /tmp/arbiter.tar.gz
-RUN rm -f /tmp/arbiter.tar.gz
+ADD arbiter.tar.gz /usr/local/
 
 # install vnc-server or xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
