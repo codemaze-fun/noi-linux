@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # check against the env with noi.cn
 # https://noi.cn/gynoi/jsgz/2021-07-16/732450.shtml
