@@ -15,6 +15,14 @@ NOI/CSP-J/CSP-S的竞赛环境  NOI Linux 2.0版（Ubuntu-NOI 2.0版）
 
 适合有Docker等容器环境，不想安装虚拟机但是想快速上手实验的同学们。
 
+快速启动容器，即可从ssh和rdp访问NOI LINUX
+
+![image](https://user-images.githubusercontent.com/8893623/222973638-697655fa-d13b-4730-8bda-fa6581c29847.png)
+
+![image](https://user-images.githubusercontent.com/8893623/222973453-46b48407-a477-4d67-a9f8-f7255c745aa8.png)
+
+![image](https://user-images.githubusercontent.com/8893623/222973583-3b9ca1b6-5337-445c-a923-a3831e8b8969.png)
+
 2. 快速安装脚本
 
 适合已经有现成的Linux环境，想复用现有环境的同学们。
