@@ -30,7 +30,7 @@ RUN apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5
 RUN apt-get install -y "language-pack-zh-hans*"
 RUN apt-get install -y locales
 RUN apt-get install -y fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
-ADD arbiter.tar.gz /usr/local/
+ADD --chown=root:root arbiter.tar.gz /usr/local/
 
 # install vnc-server or xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
@@ -46,8 +46,9 @@ RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
-ADD banner.txt /etc/ssh/
-ADD launch.sh /
+ADD --chown=root:root banner.txt /etc/ssh/
+ADD --chown=root:root launch.sh /
+RUN chmod +x /root/launch.sh
 
 # sshd and rdp
 EXPOSE 22
