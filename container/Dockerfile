@@ -50,12 +50,15 @@ ADD --chown=root:root banner.txt /etc/ssh/
 ADD --chown=root:root launch.sh /
 RUN chmod +x /root/launch.sh
 
+# add test script
+ADD --chown=root:root test-container.sh /
+RUN chmod +x /test-container.sh
+
 # sshd and rdp
 EXPOSE 22
 EXPOSE 3389
 
-# launch sshd
+# launch sshd and xrdp
 #CMD ["/usr/sbin/sshd", "-D"]
 #CMD ["xrdp"]
 CMD ["bash", "/launch.sh"]
-
