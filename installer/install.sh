@@ -28,6 +28,12 @@ rm -f vscode_amd64.deb
 
 # install arbiter
 apt-get install -y libqt5printsupport5 libqt5widgets5 libqt5gui5 libqt5core5a
+apt-get install -y "language-pack-zh-hans*"
+apt-get install -y locales
+apt-get install -y fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+wget -O arbiter.tar.gz "https://www.codemaze.dev/arbiter.tar.gz"
+tar -C /usr/local -xzvf arbiter.tar.gz
+rm -f arbiter.tar.gz
 
 # install vnc-server
 apt-get install -y xfce4 xfce4-goodies
