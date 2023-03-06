@@ -11,4 +11,4 @@ xrdp-sesman
 
 # launch x11vnc
 # the xfce4 will launch together with this
-x11vnc -create -forever -rfbauth /etc/x11vnc.pass -geometry 2560x1440
+x11vnc -create -forever -rfbauth /etc/x11vnc.pass -geometry 2160×1440
