@@ -37,7 +37,7 @@ RUN apt-get install -y x11vnc xvfb
 # set password for vnc
 RUN x11vnc -storepasswd codem@ze /etc/x11vnc.pass
 # launch default app in the x
-# RUN echo "exec firefox" > ~/.xinitrc && chmod +x ~/.xinitrc
+RUN echo "exec startxfce4" > ~/.xinitrc && chmod +x ~/.xinitrc
 
 # install xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
