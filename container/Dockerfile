@@ -50,7 +50,10 @@ ADD root/etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 ADD --chown=root:root root/etc/ssh/sshd_config /etc/ssh/sshd_config
-RUN echo 'root:codem@ze' | chpasswd
+RUN adduser codemaze
+RUN echo 'codemaze:codem@ze' | chpasswd
+RUN echo 'root:Codem@ze' | chpasswd
+RUN echo "codemaze    ALL=(ALL) NOPASSWD:ALL" | tee -a /etc/sudoers
 
 ADD --chown=root:root root/etc/ssh/banner.txt /etc/ssh/
 ADD --chown=root:root root/launch.sh /
