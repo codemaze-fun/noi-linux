@@ -18,6 +18,9 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v3.3.0
 
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
@@ -40,7 +43,7 @@ jobs:
       with:
         context: container/.
         platforms: linux/amd64
-        push: true
+        load: true
         tags: ${{ steps.meta.outputs.tags }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
