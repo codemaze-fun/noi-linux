@@ -72,12 +72,7 @@ RUN apt-get install -y net-tools iputils-ping
 
 # sshd vnc and rdp
 EXPOSE 22
-EXPOSE 5900
 EXPOSE 3389
 
-# launch sshd and xrdp
-#CMD ["/usr/sbin/sshd", "-D"]
-#CMD ["x11vnc", "-create", "-forever", "-rfbauth", "/etc/x11vnc.pass"]
-#CMD ["xrdp"]
-
+# launch the service(s)
 CMD ["bash", "/launch.sh"]
