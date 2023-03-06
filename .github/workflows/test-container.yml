@@ -40,7 +40,7 @@ jobs:
       with:
         context: container/.
         platforms: linux/amd64
-        push: true
+        load: true
         tags: ${{ steps.meta.outputs.tags }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
