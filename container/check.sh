@@ -28,3 +28,11 @@ do
     echo "Checking ${BINS_TO_CHECK[$idx]}"
     which ${BINS_TO_CHECK[$idx]}
 done
+
+# service bins to check
+BINS_TO_CHECK=("sshd" "xrdp" "x11vnc")
+for idx in "${!BINS_TO_CHECK[@]}"
+do
+    echo "Checking ${BINS_TO_CHECK[$idx]}"
+    which ${BINS_TO_CHECK[$idx]}
+done
