@@ -18,7 +18,7 @@ NOI/CSP-J/CSP-S的竞赛环境  NOI Linux 2.0版（Ubuntu-NOI 2.0版）
 快速启动容器，即可从ssh和rdp访问NOI LINUX
 
 ```
-$ docker run -p 12322:22 -p 3389:3389 -p 5900:5900 -it codemaze/noi-linux:latest
+$ docker run -p 3389:3389 -it codemaze/noi-linux:latest
 ```
 ![image](https://user-images.githubusercontent.com/8893623/223033502-5d2b9ba1-45ff-407b-a7c9-61b42aa459e8.png)
 
