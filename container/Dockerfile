@@ -61,7 +61,7 @@ ADD --chown=root:root root/check.sh /
 RUN chmod +x /check.sh
 
 # add debug tools
-RUN apt-get install -y net-tools
+RUN apt-get install -y net-tools iputils-ping
 
 # sshd vnc and rdp
 EXPOSE 22
