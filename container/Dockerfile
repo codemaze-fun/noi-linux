@@ -47,7 +47,7 @@ RUN adduser xrdp ssl-cert
 ADD root/etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini
 
 # install openssh-server
-RUN apt-get install -y openssh-server
+RUN apt-get install -y openssh-server sudo
 RUN mkdir /var/run/sshd
 ADD --chown=root:root root/etc/ssh/sshd_config /etc/ssh/sshd_config
 RUN adduser codemaze
