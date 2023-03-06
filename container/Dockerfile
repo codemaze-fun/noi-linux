@@ -43,6 +43,8 @@ RUN echo "exec startxfce4" > ~/.xinitrc && chmod +x ~/.xinitrc
 RUN apt-get install -y xfce4 xfce4-goodies
 RUN apt-get install -y xrdp
 RUN adduser xrdp ssl-cert
+# override xrdp config
+ADD root/etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini
 
 # install openssh-server
 RUN apt-get install -y openssh-server
@@ -53,11 +55,11 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
 ADD --chown=root:root banner.txt /etc/ssh/
-ADD --chown=root:root launch.sh /
+ADD --chown=root:root root/launch.sh /
 RUN chmod +x /launch.sh
 
 # add test script
-ADD --chown=root:root check.sh /
+ADD --chown=root:root root/check.sh /
 RUN chmod +x /check.sh
 
 # add debug tools
