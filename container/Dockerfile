@@ -60,6 +60,17 @@ RUN chmod +x /launch.sh
 ADD --chown=root:root root/check.sh /
 RUN chmod +x /check.sh
 
+# add images
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_00.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_01.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_02.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_03.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_04.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_05.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_06.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_07.jpg /usr/share/backgrounds/
+ADD --chown=root:root root/usr/share/backgrounds/noi_wallpaper_08.jpg /usr/share/backgrounds/
+
 # add debug tools
 RUN apt-get install -y net-tools iputils-ping
 
