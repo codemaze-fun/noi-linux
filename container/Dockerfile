@@ -52,7 +52,7 @@ RUN mkdir /var/run/sshd
 ADD --chown=root:root root/etc/ssh/sshd_config /etc/ssh/sshd_config
 RUN echo 'root:codem@ze' | chpasswd
 
-ADD --chown=root:root root/banner.txt /etc/ssh/
+ADD --chown=root:root root/etc/ssh/banner.txt /etc/ssh/
 ADD --chown=root:root root/launch.sh /
 RUN chmod +x /launch.sh
 
