@@ -35,9 +35,5 @@ wget -O arbiter.tar.gz "https://www.codemaze.dev/arbiter.tar.gz"
 tar -C /usr/local -xzvf arbiter.tar.gz
 rm -f arbiter.tar.gz
 
-# install vnc-server
-apt-get install -y xfce4 xfce4-goodies
-apt-get install -y tightvncserver
-
 # install for testing
 apt-get install -y apt-show-versions
