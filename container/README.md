@@ -23,7 +23,7 @@ Helm Chart在上述容器的基础上，提供了Kubernetes下的标准化部署
 ```shell
 $ docker pull codemaze/noi-linux
 
-$ docker run codemaze/noi-linux
+$ docker run -p 12322:22 -p 3389:3389 -p 5900:5900 codemaze/noi-linux
 ```
 
 ## Helm Chart
