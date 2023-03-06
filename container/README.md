@@ -28,12 +28,6 @@ $ docker pull codemaze/noi-linux
 $ docker run -p 12322:22 -p 3389:3389 -p 5900:5900 codemaze/noi-linux
 ```
 
-## Helm Chart
-
-```shell
-$ helm install noi-linux codemaze/noi-linux
-```
-
 ## 参考链接
 
 https://www.noi.cn/gynoi/jsgz/2021-07-16/732450.shtml
