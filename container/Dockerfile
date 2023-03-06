@@ -54,9 +54,6 @@ RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
 
-RUN adduser codemaze
-RUN echo 'codemaze:codem@ze' | chpasswd
-
 ADD --chown=root:root banner.txt /etc/ssh/
 ADD --chown=root:root root/launch.sh /
 RUN chmod +x /launch.sh
