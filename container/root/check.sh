@@ -36,3 +36,6 @@ do
     echo "Checking ${BINS_TO_CHECK[$idx]}"
     which ${BINS_TO_CHECK[$idx]}
 done
+
+# check users
+id codemaze
