@@ -18,6 +18,8 @@ Helm Chart在上述容器的基础上，提供了Kubernetes下的标准化部署
 
 - rdp on TCP port 3389
 
+- vnc on TCP port 5900
+
 ## 使用
 
 ```shell
