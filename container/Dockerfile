@@ -49,10 +49,13 @@ ADD root/etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini
 # install openssh-server
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-RUN echo 'root:codemaze' | chpasswd
+RUN echo 'root:codem@ze' | chpasswd
 RUN sed -i 's/.*PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 RUN sed -i 's/.*Banner.*/Banner \/etc\/ssh\/banner\.txt/' /etc/ssh/sshd_config
+
+RUN adduser codemaze
+RUN echo 'codemaze:codem@ze' | chpasswd
 
 ADD --chown=root:root banner.txt /etc/ssh/
 ADD --chown=root:root root/launch.sh /

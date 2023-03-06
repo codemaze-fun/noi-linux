@@ -4,6 +4,6 @@
 *                                                             *
 * by Codemaze                                                 *
 *                                                             *
-* Default root password: codemaze                             *
+* Default root password: codem@ze                             *
 *                                                             *
 ***************************************************************
