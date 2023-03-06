@@ -1,6 +1,7 @@
 #!/bin/bash
 
+/sbin/sshd
+
 xrdp
 
-/sbin/sshd -D
-
+x11vnc -create -forever -rfbauth /etc/x11vnc.pass

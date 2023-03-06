@@ -32,9 +32,15 @@ RUN apt-get install -y locales
 RUN apt-get install -y fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
 ADD --chown=root:root arbiter.tar.gz /usr/local/
 
-# install vnc-server or xrdp
+# install vnc x11vnc
+RUN apt-get install -y x11vnc xvfb
+# set password for vnc
+RUN x11vnc -storepasswd codem@ze /etc/x11vnc.pass
+# launch default app in the x
+# RUN echo "exec firefox" > ~/.xinitrc && chmod +x ~/.xinitrc
+
+# install xrdp
 RUN apt-get install -y xfce4 xfce4-goodies
-# RUN apt-get install -y tightvncserver
 RUN apt-get install -y xrdp
 RUN adduser xrdp ssl-cert
 
@@ -54,11 +60,17 @@ RUN chmod +x /launch.sh
 ADD --chown=root:root check.sh /
 RUN chmod +x /check.sh
 
-# sshd and rdp
+# add debug tools
+RUN apt-get install -y net-tools
+
+# sshd vnc and rdp
 EXPOSE 22
+EXPOSE 5900
 EXPOSE 3389
 
 # launch sshd and xrdp
 #CMD ["/usr/sbin/sshd", "-D"]
+#CMD ["x11vnc", "-create", "-forever", "-rfbauth", "/etc/x11vnc.pass"]
 #CMD ["xrdp"]
+
 CMD ["bash", "/launch.sh"]
